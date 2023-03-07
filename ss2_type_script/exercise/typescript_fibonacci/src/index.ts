@@ -1,12 +1,12 @@
 // happy coding 👻
-function getFibonacci(number: number): number{
-  if (number == 0){
+function getFibonacci(num: number): number{
+  if (num == 0){
     return 0;
   }
-  if (number == 1){
+  if (num == 1){
     return 1;
   }
-  return getFibonacci(number - 1) + getFibonacci(number - 2);
+  return getFibonacci(num - 1) + getFibonacci(num - 2);
 }
 
 let sum: number = 0;
