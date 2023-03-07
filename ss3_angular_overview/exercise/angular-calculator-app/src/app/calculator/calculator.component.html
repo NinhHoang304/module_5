@@ -1,0 +1,19 @@
+<p>calculator works!</p>
+
+<div style="width: 400px">
+  <div class="form-group">
+    <label for="firstNumber">First Number</label>
+    <input #firstNumber type="text" class="form-control" name="" id="firstNumber">
+  </div>
+  <div class="form-group">
+    <label for="secondNumber">Second Number</label>
+    <input #secondNumber type="text" class="form-control" name="" id="secondNumber">
+  </div>
+  <button type="button" class="btn btn-primary" (click)="sum(firstNumber.value, secondNumber.value)" >+</button>
+  <button type="button" class="btn btn-primary" (click)="sub(firstNumber.value, secondNumber.value)">-</button>
+  <button type="button" class="btn btn-primary" (click)="multi(firstNumber.value, secondNumber.value)">x</button>
+  <button type="button" class="btn btn-primary" (click)="division(firstNumber.value, secondNumber.value)">/</button>
+  <div>
+    Ket qua: {{result}}
+  </div>
+</div>
