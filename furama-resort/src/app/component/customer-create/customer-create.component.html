@@ -1,0 +1,241 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post">
+          <div class="row">
+            <div class="col-md-4">
+              <button type="button" class="btn btn-primary" onclick="addVilla()">Villa
+              </button>
+            </div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-primary" onclick="addHouse()">House
+              </button>
+            </div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-primary" onclick="addRoom()">Room
+              </button>
+            </div>
+          </div>
+          <hr>
+          <input id="facilityType" hidden>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Name</p>
+            </div>
+            <div class="col-md-9">
+              <input type="text">
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Area</p>
+            </div>
+            <div class="col-md-9">
+              <input type="number">
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Cost</p>
+            </div>
+            <div class="col-md-9">
+              <input type="number">
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Max People</p>
+            </div>
+            <div class="col-md-9">
+              <input type="number">
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Rent Type</p>
+            </div>
+            <div class="col-md-9">
+
+            </div>
+
+          </div>
+          <div class="row" id="standRoom">
+            <div class="col-md-3">
+              <p>Stand Room</p>
+            </div>
+            <div class="col-md-9">
+              <input type="text">
+            </div>
+          </div>
+          <div class="row" id="descriptionOtherConvenience">
+            <div class="col-md-3">
+              <p>Description other convenience</p>
+            </div>
+            <div class="col-md-9">
+              <input type="text">
+            </div>
+          </div>
+          <div class="row" id="poolArea">
+            <div class="col-md-3">
+              <p>Pool Area</p>
+            </div>
+            <div class="col-md-9">
+              <input type="text">
+
+            </div>
+          </div>
+          <div class="row" id="numberOfFloors">
+            <div class="col-md-3">
+              <p>Number Of Floors</p>
+            </div>
+            <div class="col-md-9">
+              <input type="text">
+            </div>
+          </div>
+          <div class="row" id="facilityFree">
+            <div class="col-md-3">
+              <p>Facility Free</p>
+            </div>
+            <div class="col-md-9">
+              <input type="text">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post">
+          <div class="row">
+            <div class="col-md-4">
+              <button type="button" class="btn btn-primary" onclick="addVilla()">Villa
+              </button>
+            </div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-primary" onclick="addHouse()">House
+              </button>
+            </div>
+            <div class="col-md-4">
+              <button type="button" class="btn btn-primary" onclick="addRoom()">Room
+              </button>
+            </div>
+          </div>
+          <hr>
+          <input id="facilityTypeEdit" hidden>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Name</p>
+            </div>
+            <div class="col-md-9">
+              <input type="text">
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Area</p>
+            </div>
+            <div class="col-md-9">
+              <input type="number">
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Cost</p>
+            </div>
+            <div class="col-md-9">
+              <input type="number">
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Max People</p>
+            </div>
+            <div class="col-md-9">
+              <input type="number">
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Rent Type</p>
+            </div>
+            <div class="col-md-9">
+
+            </div>
+
+          </div>
+          <div class="row" id="standRoomEdit">
+            <div class="col-md-3">
+              <p>Stand Room</p>
+            </div>
+            <div class="col-md-9">
+              <input type="text">
+            </div>
+          </div>
+          <div class="row" id="descriptionOtherConvenienceEdit">
+            <div class="col-md-3">
+              <p>Description other convenience</p>
+            </div>
+            <div class="col-md-9">
+              <input type="text">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Pool Area</p>
+            </div>
+            <div class="col-md-9">
+              <input type="text">
+
+            </div>
+          </div>
+          <div class="row" id="numberOfFloorsEdit">
+            <div class="col-md-3">
+              <p>Number Of Floors</p>
+            </div>
+            <div class="col-md-9">
+              <input type="text">
+            </div>
+          </div>
+          <div class="row" id="facilityFreeEdit">
+            <div class="col-md-3">
+              <p>Facility Free</p>
+            </div>
+            <div class="col-md-9">
+              <input type="text">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
