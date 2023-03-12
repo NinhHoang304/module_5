@@ -24,7 +24,7 @@ export class FacilityComponent implements OnInit {
       name: 'Villa',
       cost : 1000020,
     }
-  ]
+  ];
   constructor() { }
 
   ngOnInit(): void {
