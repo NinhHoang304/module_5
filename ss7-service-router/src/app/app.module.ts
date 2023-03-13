@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TimelinesComponent } from './timelines/timelines.component';
 import { YoutubePlaylistComponent } from './youtube-playlist/youtube-playlist.component';
+import { DistionaryPageComponent } from './distionary/distionary-page/distionary-page.component';
+import { DistionaryDetailComponent } from './distionary/distionary-detail/distionary-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TimelinesComponent,
-    YoutubePlaylistComponent
+    YoutubePlaylistComponent,
+    DistionaryPageComponent,
+    DistionaryDetailComponent
   ],
   imports: [
     BrowserModule,

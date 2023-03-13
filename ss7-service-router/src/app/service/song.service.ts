@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Song} from '../model/song';
-import * as wasi from 'wasi';
 
 @Injectable({
   providedIn: 'root'

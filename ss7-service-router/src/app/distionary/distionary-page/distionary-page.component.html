@@ -1,0 +1,15 @@
+<h1>Dictionary page</h1>
+<table>
+  <tr>
+    <td>#</td>
+    <td>Word</td>
+    <td>Detail</td>
+  </tr>
+  <tr *ngFor="let word of words; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{word.word}}</td>
+    <td>
+      <a routerLink="/word/detail/{{word.id}}">Detail</a>
+    </td>
+  </tr>
+</table>
