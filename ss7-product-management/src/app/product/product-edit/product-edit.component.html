@@ -1,1 +1,22 @@
-<p>product-edit works!</p>
+<div class="container">
+  <div class="mb-3"><h3 style="text-align: center">Edit product</h3></div>
+  <div class="mb-3" style="max-width: 70%; margin: 0 auto">
+    <form [formGroup]="productForm" (ngSubmit)="updateProduct()">
+      <input type="number" hidden formControlName="id">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input formControlName="name" type="text" class="form-control" id="name">
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input formControlName="price" type="text" class="form-control" id="price">
+      </div>
+      <div class="mb-3">
+        <label for="des" class="form-label">Description</label>
+        <input formControlName="description" type="text" class="form-control" id="des">
+      </div>
+
+      <button style="float: right" type="submit" class="btn btn-success">Save Changes</button>
+    </form>
+  </div>
+</div>

@@ -10,18 +10,19 @@ import {Router} from '@angular/router';
   styleUrls: ['./product-create.component.css']
 })
 export class ProductCreateComponent implements OnInit {
-  productForm: FormGroup = new FormGroup({
-    id: new FormControl(),
-    name: new FormControl(),
-    price: new FormControl(),
-    description: new FormControl()
-  });
+  productForm: FormGroup;
 
   constructor(private productService: ProductService,
               private router: Router) {
   }
 
   ngOnInit(): void {
+    this.productForm = new FormGroup({
+      id: new FormControl(),
+      name: new FormControl(),
+      price: new FormControl(),
+      description: new FormControl()
+    });
   }
 
   submit() {

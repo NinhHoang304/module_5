@@ -42,4 +42,14 @@ export class ProductService {
   saveProduct(product: Product) {
     this.products.push(product);
   }
+
+  findById(id: number): Product {
+    return this.products.filter(item => item.id === id)[0];
+  }
+
+  updateProduct(product: Product) {
+    this.products = this.products.map(item => {
+      return item.id === product.id ? product : item;
+    });
+  }
 }

@@ -12,6 +12,8 @@
         <th>Name</th>
         <th>Price</th>
         <th>Description</th>
+        <th>Edit</th>
+        <th>Delete</th>
       </thead>
       <tbody>
         <tr *ngFor="let product of products; index as i">
@@ -19,6 +21,12 @@
           <td>{{product.name}}</td>
           <td>{{product.price}}</td>
           <td>{{product.description}}</td>
+          <td>
+            <a routerLink="/product/edit/{{product.id}}" class="btn btn-primary">Edit</a>
+          </td>
+          <td>
+            delete
+          </td>
         </tr>
       </tbody>
     </table>
