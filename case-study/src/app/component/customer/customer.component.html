@@ -1,1 +1,45 @@
-<p>customer works!</p>
+<div class="table-list">
+  <div class="table-responsive">
+    <table class="table table-striped w-100" id="tableCustomer">
+      <thead style="vertical-align: top; text-align: center">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Day Of Birth</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr *ngFor="let customer of customerList">
+        <td>{{customer.id}}</td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.dayOfBirth}}</td>
+        <td>
+          <span *ngIf="customer.gender === true">Nam</span>
+          <span *ngIf="!customer.gender === true">Nữ</span>
+        </td>
+        <td>{{customer.phoneNumber}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.address}}</td>
+        <td>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                  data-bs-target="#editModal">Edit
+          </button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                  data-bs-target="#deleteModal">Delete
+          </button>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
