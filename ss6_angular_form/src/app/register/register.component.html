@@ -1,0 +1,71 @@
+<div class="container" style="width:800px;height: 700px;margin-top: 10px;box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);">
+  <div style="width:600px;margin: 0 auto;">
+    <h3>Register Form</h3>
+
+    <form [formGroup]="register" (ngSubmit)="onSubmit()">
+      <label for="email" class="form-label">Email</label><span class="text-danger">*</span>
+      <div class="input-group mb-2">
+        <input type="text" class="form-control" formControlName="email" id="email">
+      </div>
+      <p *ngIf="register.controls.email.touched && register.controls.email?.errors?.required" class="text-danger">Bắt buộc nhập</p>
+      <p *ngIf="register.controls.email.touched && register.controls.email?.errors?.email" class="text-danger">Sai định dạng email</p>
+
+      <label for="password" class="form-label">Password</label><span class="text-danger">*</span>
+      <div class="input-group mb-2">
+        <input type="password" class="form-control" formControlName="password" id="password">
+      </div>
+      <p *ngIf="register.controls.password.touched && register.controls.password?.errors?.required" class="text-danger">Bắt buộc nhập</p>
+      <p *ngIf="register.controls.password.touched && register.controls.password?.errors?.minlength" class="text-danger">Ít nhất 6 ký tự</p>
+
+      <label for="cf-password" class="form-label">Confirm password</label><span class="text-danger">*</span>
+      <div class="input-group mb-2">
+        <input type="password" class="form-control" formControlName="cfPassword" id="cf-password">
+      </div>
+      <p *ngIf="register.controls.cfPassword.touched && register.controls.cfPassword?.errors?.required" class="text-danger">Bắt buộc nhập</p>
+      <p *ngIf="register.controls.cfPassword.touched && register.controls.cfPassword?.value != register.controls.password?.value" class="text-danger">Sai mật khẩu</p>
+
+      <label for="country" class="form-label">Country</label><span class="text-danger">*</span>
+      <div class="input-group mb-2">
+        <select class="form-select" formControlName="country" id="country" aria-label="Default select example">
+          <option value="1">VietNam</option>
+          <option value="2">Japan</option>
+          <option value="3">China</option>
+        </select>
+      </div>
+      <p *ngIf="register.controls.country.touched && register.controls.country?.errors?.required" class="text-danger">Bắt buộc nhập</p>
+
+      <label for="age" class="form-label">Age</label><span class="text-danger">*</span>
+      <div class="input-group mb-2">
+        <input type="text" formControlName="age" class="form-control" id="age">
+      </div>
+      <p *ngIf="register.controls.age.touched && register.controls.age?.errors?.required" class="text-danger">Bắt buộc nhập</p>
+      <p *ngIf="register.controls.age.touched && register.controls.age?.errors?.min" class="text-danger">Phải lớn hơn 18 tuổi</p>
+
+      <label class="form-label">Gender</label><span class="text-danger">*</span>
+      <div class="d-flex">
+        <div class="form-check">
+          <input class="form-check-input" formControlName="gender" type="radio" value="1" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">
+            Male
+          </label>
+        </div>
+        <div class="form-check" style="margin-left: 10px">
+          <input class="form-check-input" formControlName="gender" type="radio"  value="2"  id="flexRadioDefault2">
+          <label class="form-check-label" for="flexRadioDefault2">
+            Female
+          </label>
+        </div>
+      </div>
+      <p *ngIf="register.controls.gender.pristine && register.controls.gender?.errors?.required" class="text-danger">Bắt buộc nhập</p>
+
+      <label for="phone" class="form-label">Phone</label><span class="text-danger">*</span>
+      <div class="input-group mb-2">
+        <input type="text" formControlName="phone" class="form-control" id="phone" placeholder="+84 và 9 đến 10 số ">
+      </div>
+      <p *ngIf="register.controls.phone.touched && register.controls.phone?.errors?.required" class="text-danger">Bắt buộc nhập</p>
+      <p *ngIf="register.controls.phone.touched && register.controls.phone?.errors?.pattern" class="text-danger">Sai định dạng</p>
+
+      <button [disabled]="register.invalid" type="submit" class="btn-primary btn">Submit</button>
+    </form>
+  </div>
+</div>
