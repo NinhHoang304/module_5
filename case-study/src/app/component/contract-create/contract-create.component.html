@@ -1,1 +1,80 @@
-<p>contract-create works!</p>
+<div class="container">
+  <!--title-->
+  <div class="row" style="margin-top: 20px">
+    <h3 style="text-align: center">Create Contract</h3>
+  </div>
+  <!--end title-->
+  <div class="row" style="margin-top: 20px; margin-bottom: 20px">
+    <div class="col-12" style="max-width: 60%; margin: 0 auto">
+      <form [formGroup]="contractForm" (ngSubmit)="addContract()">
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Start Date</span>
+          <input type="date" formControlName="startDate" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+        <p class="text-danger" *ngIf="contractForm.controls.startDate?.errors?.required && contractForm.controls.startDate?.touched">
+          Không được để trống
+        </p>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">End Date</span>
+          <input type="date" formControlName="endDate" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+        <p class="text-danger" *ngIf="contractForm.controls.endDate?.errors?.required && contractForm.controls.endDate?.touched">
+          Không được để trống
+        </p>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Deposit</span>
+          <input type="text" formControlName="deposit" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+        <p class="text-danger" *ngIf="contractForm.controls.deposit?.errors?.required && contractForm.controls.deposit?.touched">
+          Không được để trống
+        </p>
+        <p class="text-danger" *ngIf="contractForm.controls.deposit?.errors?.pattern && contractForm.controls.deposit?.touched">
+          Phải là số dương
+        </p>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Total Cost</span>
+          <input type="number" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Customer</span>
+          <select formControlName="customer" class="form-select" aria-label="Default select example">
+            <option value="0">Chọn khách hàng</option>
+            <option value="1">Hoàng</option>
+            <option value="2">Hùng</option>
+            <option value="3">Vũ</option>
+          </select>
+        </div>
+        <p class="text-danger"
+           *ngIf="contractForm.controls.customer?.errors?.required && contractForm.controls.customer?.touched">
+          Không được để trống
+        </p>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Facility</span>
+          <select formControlName="facility" class="form-select" aria-label="Default select example">
+            <option value="0">Chọn dịch vụ</option>
+            <option value="1">Suite</option>
+            <option value="2">Vip</option>
+          </select>
+        </div>
+        <p class="text-danger"
+           *ngIf="contractForm.controls.facility?.errors?.required && contractForm.controls.facility?.touched">
+          Không được để trống
+        </p>
+
+        <button [disabled]="contractForm.invalid" style="float: right" type="submit"
+                class="btn btn-outline-success">Save changes
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

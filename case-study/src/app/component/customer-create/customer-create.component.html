@@ -8,105 +8,114 @@
     <div class="col-12" style="max-width: 60%; margin: 0 auto">
       <form [formGroup]="createCustomerForm" (ngSubmit)="addCustomer()">
 
-          <div class="input-group mb-3">
-            <span class="input-group-text">Code</span>
-            <input type="text" formControlName="code" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            <p *ngIf="createCustomerForm.controls.code?.errors?.required && createCustomerForm.controls.code?.touched">
-              Không được để trống mã khách hàng
-            </p>
-            <p *ngIf="createCustomerForm.controls.code?.errors?.pattern && createCustomerForm.controls.code?.touched">
-              Sai định dạng
-            </p>
-          </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Code</span>
+          <input type="text" formControlName="code" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+        <p class="text-danger" *ngIf="createCustomerForm.controls.code?.errors?.required && createCustomerForm.controls.code?.touched">
+          Không được để trống mã khách hàng
+        </p>
+        <p class="text-danger" *ngIf="createCustomerForm.controls.code?.errors?.pattern && createCustomerForm.controls.code?.touched">
+          Sai định dạng
+        </p>
 
-          <div class="input-group mb-3">
-            <span class="input-group-text">Name</span>
-            <input type="text" formControlName="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            <p *ngIf="createCustomerForm.controls.name?.errors?.required && createCustomerForm.controls.name?.touched">
-              Không được để trống
-            </p>
-          </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Name</span>
+          <input type="text" formControlName="name" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+        <p class="text-danger" *ngIf="createCustomerForm.controls.name?.errors?.required && createCustomerForm.controls.name?.touched">
+          Không được để trống
+        </p>
 
-          <div class="input-group mb-3">
-            <span class="input-group-text">Day Of Birth</span>
-            <input type="date" formControlName="dayOfBirth" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            <p *ngIf="createCustomerForm.controls.dayOfBirth?.errors?.required && createCustomerForm.controls.dayOfBirth?.touched">
-              Không được để trống
-            </p>
-          </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Day Of Birth</span>
+          <input type="date" formControlName="dayOfBirth" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+        <p class="text-danger" *ngIf="createCustomerForm.controls.dayOfBirth?.errors?.required && createCustomerForm.controls.dayOfBirth?.touched">
+          Không được để trống
+        </p>
 
-          <div class="input-group mb-3">
-            <div class="form-check">
-              <input class="form-check-input" formControlName="gender" type="radio" value="1" id="flexRadioDefault1">
-              <label class="form-check-label" for="flexRadioDefault1">
-                Male
-              </label>
-            </div>
-            <div class="form-check" style="margin-left: 10px">
-              <input class="form-check-input" formControlName="gender" type="radio"  value="2"  id="flexRadioDefault2">
-              <label class="form-check-label" for="flexRadioDefault2">
-                Female
-              </label>
-            </div>
-            <p *ngIf="createCustomerForm.controls.gender?.errors?.pristine && createCustomerForm.controls.gender?.touched">
-              Không được để trống
-            </p>
+        <div class="input-group mb-3">
+          <div class="form-check">
+            <input class="form-check-input" formControlName="gender" type="radio" value="true" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Male
+            </label>
           </div>
-
-          <div class="input-group mb-3">
-            <span class="input-group-text">Id Card</span>
-            <input type="number" formControlName="idCard" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            <p *ngIf="createCustomerForm.controls.idCard?.errors?.required && createCustomerForm.controls.idCard?.touched">
-              Không được để trống
-            </p>
-            <p *ngIf="createCustomerForm.controls.idCard?.errors?.pattern && createCustomerForm.controls.idCard?.touched">
-              Sai định dạng
-            </p>
+          <div class="form-check" style="margin-left: 10px">
+            <input class="form-check-input" formControlName="gender" type="radio" value="false" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Female
+            </label>
           </div>
+        </div>
+        <p *ngIf="createCustomerForm.controls.gender.pristine && createCustomerForm.controls.gender?.errors?.required" class="text-danger">Bắt buộc nhập</p>
 
-          <div class="input-group mb-3">
-            <span class="input-group-text">Phone Number</span>
-            <input type="text" formControlName="phoneNumber" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            <p *ngIf="createCustomerForm.controls.phoneNumber?.errors?.required && createCustomerForm.controls.phoneNumber?.touched">
-              Không được để trống
-            </p>
-            <p *ngIf="createCustomerForm.controls.phoneNumber?.errors?.pattern && createCustomerForm.controls.phoneNumber?.touched">
-              Sai định dạng
-            </p>
-          </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Id Card</span>
+          <input type="number" formControlName="idCard" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+        <p class="text-danger" *ngIf="createCustomerForm.controls.idCard?.errors?.required && createCustomerForm.controls.idCard?.touched">
+          Không được để trống
+        </p>
+        <p class="text-danger" *ngIf="createCustomerForm.controls.idCard?.errors?.pattern && createCustomerForm.controls.idCard?.touched">
+          Sai định dạng
+        </p>
 
-          <div class="input-group mb-3">
-            <span class="input-group-text">Email</span>
-            <input type="email" formControlName="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            <p *ngIf="createCustomerForm.controls.email?.errors?.email && createCustomerForm.controls.email?.touched">
-              Sai định dạng
-            </p>
-          </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Phone Number</span>
+          <input type="text" formControlName="phoneNumber" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+        <p class="text-danger" *ngIf="createCustomerForm.controls.phoneNumber?.errors?.required && createCustomerForm.controls.phoneNumber?.touched">
+          Không được để trống
+        </p>
+        <p class="text-danger" *ngIf="createCustomerForm.controls.phoneNumber?.errors?.pattern && createCustomerForm.controls.phoneNumber?.touched">
+          Sai định dạng
+        </p>
 
-          <div class="input-group mb-3">
-            <span class="input-group-text">Address</span>
-            <input type="text" formControlName="address" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            <p *ngIf="createCustomerForm.controls.address?.errors?.required && createCustomerForm.controls.address?.touched">
-              Không được để trống
-            </p>
-          </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Email</span>
+          <input type="email" formControlName="email" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+        <p class="text-danger" *ngIf="createCustomerForm.controls.email?.errors?.email && createCustomerForm.controls.email?.touched">
+          Sai định dạng
+        </p>
 
-          <div class="input-group mb-3">
-            <span class="input-group-text">Customer Type</span>
-            <select formControlName="customerType" class="form-select" aria-label="Default select example">
-              <option value="0" disabled>Chọn loại khách hàng</option>
-              <option value="1">Diamond</option>
-              <option value="2">Platinum</option>
-              <option value="3">Gold</option>
-              <option value="4">Silver</option>
-              <option value="5">Member</option>
-            </select>
-            <p *ngIf="createCustomerForm.controls.customerType?.errors?.required && createCustomerForm.controls.customerType?.touched">
-              Không được để trống
-            </p>
-          </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Address</span>
+          <input type="text" formControlName="address" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+        <p class="text-danger"
+          *ngIf="createCustomerForm.controls.address?.errors?.required && createCustomerForm.controls.address?.touched">
+          Không được để trống
+        </p>
 
-        <button [disabled]="createCustomerForm.invalid" style="float: right" type="submit" class="btn btn-outline-success">Save changes</button>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Customer Type</span>
+          <select formControlName="customerType" class="form-select" aria-label="Default select example">
+            <option value="0" disabled>Chọn loại khách hàng</option>
+            <option value="1">Diamond</option>
+            <option value="2">Platinum</option>
+            <option value="3">Gold</option>
+            <option value="4">Silver</option>
+            <option value="5">Member</option>
+          </select>
+        </div>
+        <p class="text-danger"
+          *ngIf="createCustomerForm.controls.customerType?.errors?.required && createCustomerForm.controls.customerType?.touched">
+          Không được để trống
+        </p>
+
+        <button [disabled]="createCustomerForm.invalid" style="float: right" type="submit"
+                class="btn btn-outline-success">Save changes
+        </button>
       </form>
     </div>
   </div>

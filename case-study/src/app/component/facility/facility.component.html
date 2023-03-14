@@ -20,8 +20,8 @@
           <h5 class="card-title">{{facility.name}}</h5>
           <p class="card-text">Area: {{facility.area}}m2</p>
           <p class="card-text">Max people: {{facility.maxPeople}} person</p>
-          <a routerLink="/facility/edit" class="btn btn-outline-success">Edit</a>
-          <a style="margin-left: 5px" href="#" class="btn btn-outline-danger">Remove</a>
+          <a routerLink="/facility/edit/{{facility.id}}" class="btn btn-outline-success">Edit</a>
+          <a style="margin-left: 5px" routerLink="/facility/delete/{{facility.id}}" class="btn btn-outline-danger">Remove</a>
         </div>
       </div>
     </div>

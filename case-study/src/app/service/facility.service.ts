@@ -64,4 +64,8 @@ export class FacilityService {
   getAll(): Facility[] {
     return this.facilityList;
   }
+
+  findById(id: number) {
+    return this.facilityList.find(facility => facility.id === id);
+  }
 }

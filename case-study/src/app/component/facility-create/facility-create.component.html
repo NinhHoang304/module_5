@@ -6,7 +6,7 @@
 <!--end title-->
   <div class="row" style="margin-top: 20px; margin-bottom: 20px">
     <div class="col-12" style="max-width: 60%; margin: 0 auto">
-      <form action="">
+      <form [formGroup]="facilityCreateForm" (ngSubmit)="addFacility()">
         <div class="mb-3">
           <button type="button" style="margin-left: 150px" class="btn btn-outline-primary" (click)="addVilla()">
             Add Villa
@@ -21,70 +21,109 @@
         <div class="mb-1">
           <div class="input-group mb-3">
             <span class="input-group-text">Name</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input type="text" formControlName="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
           </div>
+          <p class="text-danger" *ngIf="facilityCreateForm.controls.name?.errors?.required && facilityCreateForm.controls.name?.touched">
+            Không được để trống
+          </p>
+          <p class="text-danger" *ngIf="facilityCreateForm.controls.name?.errors?.pattern && facilityCreateForm.controls.name?.touched">
+            Tên không chứa số
+          </p>
         </div>
         <div class="mb-1">
           <div class="input-group mb-3">
             <span class="input-group-text">Area</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input type="text" formControlName="area" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
           </div>
+          <p class="text-danger" *ngIf="facilityCreateForm.controls.area?.errors?.required && facilityCreateForm.controls.area?.touched">
+            Không được để trống
+          </p>
         </div>
         <div class="mb-1">
           <div class="input-group mb-3">
             <span class="input-group-text">Cost</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input type="text" formControlName="cost" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
           </div>
+          <p class="text-danger" *ngIf="facilityCreateForm.controls.cost?.errors?.required && facilityCreateForm.controls.cost?.touched">
+            Không được để trống
+          </p>
         </div>
         <div class="mb-1">
           <div class="input-group mb-3">
             <span class="input-group-text">Max people</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input type="text" formControlName="maxPeople" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
           </div>
+          <p class="text-danger" *ngIf="facilityCreateForm.controls.maxPeople?.errors?.required && facilityCreateForm.controls.maxPeople?.touched">
+            Không được để trống
+          </p>
         </div>
         <div class="mb-1" id="standardRoom">
           <div class="input-group mb-3">
             <span class="input-group-text">Standard Room</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input type="text" formControlName="standardRoom" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
           </div>
+          <p class="text-danger" *ngIf="facilityCreateForm.controls.standardRoom?.errors?.required && facilityCreateForm.controls.standardRoom?.touched">
+            Không được để trống
+          </p>
         </div>
         <div class="mb-1" id="descriptionOtherConvenience">
           <div class="input-group mb-3">
             <span class="input-group-text">Description</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input type="text" formControlName="descriptionOtherConvenience" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
           </div>
+          <p class="text-danger" *ngIf="facilityCreateForm.controls.descriptionOtherConvenience?.errors?.required && facilityCreateForm.controls.descriptionOtherConvenience?.touched">
+            Không được để trống
+          </p>
         </div>
         <div class="mb-1" id="poolArea">
           <div class="input-group mb-3">
             <span class="input-group-text">Pool Area</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input type="text" formControlName="poolArea" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
           </div>
+          <p class="text-danger" *ngIf="facilityCreateForm.controls.poolArea?.errors?.required && facilityCreateForm.controls.poolArea?.touched">
+            Không được để trống
+          </p>
+          <p class="text-danger" *ngIf="facilityCreateForm.controls.poolArea?.errors?.pattern && facilityCreateForm.controls.poolArea?.touched">
+            Phải là số nguyên dương
+          </p>
         </div>
         <div class="mb-1" id="numberOfFloors">
           <div class="input-group mb-3">
             <span class="input-group-text">Number of Floor</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input type="text" formControlName="numberOfFloors" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
           </div>
+          <p class="text-danger" *ngIf="facilityCreateForm.controls.numberOfFloors?.errors?.required && facilityCreateForm.controls.numberOfFloors?.touched">
+            Không được để trống
+          </p>
+          <p class="text-danger" *ngIf="facilityCreateForm.controls.numberOfFloors?.errors?.pattern && facilityCreateForm.controls.numberOfFloors?.touched">
+            Phải là số nguyên dương
+          </p>
         </div>
         <div class="mb-1" id="facilityFree">
           <div class="input-group mb-3">
             <span class="input-group-text">Facility Free</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input type="text" formControlName="facilityFree" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
           </div>
+          <p class="text-danger" *ngIf="facilityCreateForm.controls.facilityFree?.errors?.required && facilityCreateForm.controls.facilityFree?.touched">
+            Không được để trống
+          </p>
         </div>
         <div class="mb-1">
           <div class="input-group mb-3">
             <span class="input-group-text">Rent Type</span>
-            <select class="form-select" aria-label="Default select example">
+            <select formControlName="rentType" class="form-select" aria-label="Default select example">
               <option selected>Open this select menu</option>
               <option value="1">One</option>
               <option value="2">Two</option>
               <option value="3">Three</option>
             </select>
           </div>
+          <p class="text-danger" *ngIf="facilityCreateForm.controls.rentType?.errors?.required && facilityCreateForm.controls.rentType?.touched">
+            Không được để trống
+          </p>
         </div>
 
-        <button style="float: right" type="submit" class="btn btn-outline-success">Save changes</button>
+        <button [disabled]="facilityCreateForm.invalid" style="float: right" type="submit" class="btn btn-outline-success">Save changes</button>
       </form>
     </div>
   </div>
