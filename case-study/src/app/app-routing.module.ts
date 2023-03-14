@@ -14,10 +14,10 @@ import {BodyContentComponent} from './component/body-content/body-content.compon
 const routes: Routes = [
   {path: 'facility', component: FacilityComponent},
   {path: 'facility/create', component: FacilityCreateComponent},
-  {path: 'facility/edit', component: FacilityEditComponent},
+  {path: 'facility/edit/:id', component: FacilityEditComponent},
   {path: 'customer', component: CustomerComponent},
   {path: 'customer/create', component: CustomerCreateComponent},
-  {path: 'customer/edit', component: CustomerEditComponent},
+  {path: 'customer/edit/:id', component: CustomerEditComponent},
   {path: 'contract', component: ContractComponent},
   {path: 'contract/create', component: ContractCreateComponent},
   {path: '', component: BodyContentComponent}

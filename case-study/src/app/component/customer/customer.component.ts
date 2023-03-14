@@ -14,8 +14,4 @@ export class CustomerComponent implements OnInit {
   ngOnInit(): void {
     this.customerList = this.customerService.getAll();
   }
-
-  edit(id: string) {
-    return null;
-  }
 }

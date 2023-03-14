@@ -9,12 +9,12 @@
       <form [formGroup]="createCustomerForm" (ngSubmit)="addCustomer()">
 
           <div class="input-group mb-3">
-            <span class="input-group-text">Id</span>
-            <input type="text" formControlName="id" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            <p *ngIf="createCustomerForm.controls.id?.errors?.required && createCustomerForm.controls.id?.touched">
+            <span class="input-group-text">Code</span>
+            <input type="text" formControlName="code" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <p *ngIf="createCustomerForm.controls.code?.errors?.required && createCustomerForm.controls.code?.touched">
               Không được để trống mã khách hàng
             </p>
-            <p *ngIf="createCustomerForm.controls.id?.errors?.pattern && createCustomerForm.controls.id?.touched">
+            <p *ngIf="createCustomerForm.controls.code?.errors?.pattern && createCustomerForm.controls.code?.touched">
               Sai định dạng
             </p>
           </div>
@@ -22,7 +22,7 @@
           <div class="input-group mb-3">
             <span class="input-group-text">Name</span>
             <input type="text" formControlName="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            <p *ngIf="createCustomerForm.controls.id?.errors?.required && createCustomerForm.controls.name?.touched">
+            <p *ngIf="createCustomerForm.controls.name?.errors?.required && createCustomerForm.controls.name?.touched">
               Không được để trống
             </p>
           </div>

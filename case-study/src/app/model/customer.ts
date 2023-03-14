@@ -1,5 +1,6 @@
 export interface Customer {
-  id?: string;
+  id?: number;
+  code?: string;
   name?: string;
   dayOfBirth?: string;
   gender?: boolean;

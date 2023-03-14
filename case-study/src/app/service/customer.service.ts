@@ -7,7 +7,8 @@ import {Customer} from '../model/customer';
 export class CustomerService {
   customerList: Customer[] = [
     {
-      id: 'KH-0001',
+      id: 1,
+      code: 'KH-0001',
       name: 'Nguyễn Thị Hào',
       dayOfBirth: '1970-11-07',
       gender: false,
@@ -18,7 +19,8 @@ export class CustomerService {
       customerType: 1
     },
     {
-      id: 'KH-0002',
+      id: 2,
+      code: 'KH-0002',
       name: 'Phạm Xuân Diệu',
       dayOfBirth: '1970-11-07',
       gender: true,
@@ -29,7 +31,8 @@ export class CustomerService {
       customerType: 2
     },
     {
-      id: 'KH-0003',
+      id: 3,
+      code: 'KH-0003',
       name: 'Trương Đình Nghệ',
       dayOfBirth: '1970-11-07',
       gender: true,
@@ -46,5 +49,9 @@ export class CustomerService {
 
   getAll(): Customer[] {
     return this.customerList;
+  }
+
+  findById(id: number): Customer {
+    return this.customerList.find(customer => customer.id === id);
   }
 }
