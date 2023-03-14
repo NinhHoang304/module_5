@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="mb-3">
+    <h3>Todo List</h3>
+  </div>
+  <div class="col-6 mb-3">
+    <form *ngIf="todoForm" [formGroup]="todoForm" (ngSubmit)="updateTodo()">
+      <input type="number" hidden formControlName="id">
+      <span>Content</span>
+      <input type="text" formControlName="content" class="form-control">
+      <input hidden formControlName="complete">
+      <button type="submit" class="btn btn-success">Save Changes</button>
+    </form>
+  </div>
+</div>

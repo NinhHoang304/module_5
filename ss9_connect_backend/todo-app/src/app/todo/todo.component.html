@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="mb-3">
+    <h3>Todo List</h3>
+  </div>
+  <div class="col-6 mb-3">
+    <input type="text" class="form-control" [formControl]="content" (change)="change()">
+    <ul>
+      <li (click)="toggleTodo(i)" [class.complete]="todo.complete" *ngFor="let todo of todos; index as i">
+        {{todo.content}}
+        <button routerLink="/todo/edit/{{todo.id}}" class="btn btn-outline-primary btn-sm">Edit</button>
+        <button routerLink="/todo/delete/{{todo.id}}" style="margin-left: 5px" class="btn btn-outline-danger btn-sm">Delete</button>
+      </li>
+    </ul>
+  </div>
+</div>

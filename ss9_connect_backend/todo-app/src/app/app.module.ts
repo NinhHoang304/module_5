@@ -3,20 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductCreateComponent } from './product/product-create/product-create.component';
-import { ProductListComponent } from './product/product-list/product-list.component';
+import { TodoComponent } from './todo/todo.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import { ProductEditComponent } from './product/product-edit/product-edit.component';
-import { ProductDeleteComponent } from './product/product-delete/product-delete.component';
 import {HttpClientModule} from '@angular/common/http';
+import { TodoEditComponent } from './todo-edit/todo-edit.component';
+import { TodoDeleteComponent } from './todo-delete/todo-delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductCreateComponent,
-    ProductListComponent,
-    ProductEditComponent,
-    ProductDeleteComponent
+    TodoComponent,
+    TodoEditComponent,
+    TodoDeleteComponent
   ],
     imports: [
         BrowserModule,
