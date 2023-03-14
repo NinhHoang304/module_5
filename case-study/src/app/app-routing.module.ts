@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'customer/edit', component: CustomerEditComponent},
   {path: 'contract', component: ContractComponent},
   {path: 'contract/create', component: ContractCreateComponent},
-  {path: 'home', component: BodyContentComponent}
+  {path: '', component: BodyContentComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,49 @@
+
+<!--content-->
+<div class="container" style="margin-top: 50px; margin-bottom: 50px">
+  <div class="mb-3">
+    <h3 style="text-align: center">Contract List</h3>
+  </div>
+  <div class="mb-3">
+    <a routerLink="/facility/create" class="btn btn-success">Create Facility</a>
+  </div>
+  <div class="row">
+    <div class="table-list">
+      <div class="table-responsive">
+        <table class="table table-striped w-100" id="tableContract">
+          <thead style="vertical-align: top; text-align: center">
+          <tr class="text-center">
+            <th scope="col">#</th>
+            <th scope="col">Facility Name</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Start day</th>
+            <th scope="col">End day</th>
+            <th scope="col">Deposit</th>
+            <th scope="col">Attach facility</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let contract of contractList, index as i">
+            <td>{{i+1}}</td>
+            <td>{{contract.facility.name}}</td>
+            <td>{{contract.customer.name}}</td>
+            <td>{{contract.startDate}}</td>
+            <td>{{contract.endDate}}</td>
+            <td>{{contract.deposit}}</td>
+            <td>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#newAttachFacilityModal">+
+              </button>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#attachFacilityList">
+                Attach facility list
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end content-->
