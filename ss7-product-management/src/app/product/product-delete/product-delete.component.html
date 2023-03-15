@@ -1,13 +1,13 @@
 <div class="container">
   <div class="mb-3"><h3 style="text-align: center">Delete product</h3></div>
   <div class="mb-3" style="max-width: 70%; margin: 0 auto">
-    <form [formGroup]="productForm" (ngSubmit)="deleteProduct(id)">
-      <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input formControlName="name" type="text" class="form-control" id="name">
-      </div>
+    <div class="mb-3">
+      <p>Name: {{product.name}}</p>
+    </div>
+    <div class="mb-3">
+      <p>Price: {{product.price}}</p>
+    </div>
 
-      <button style="float: right" type="submit" class="btn btn-danger">Delete</button>
-    </form>
+    <button (click)="deleteProduct(product.id)" style="float: right" type="submit" class="btn btn-danger">Delete</button>
   </div>
 </div>

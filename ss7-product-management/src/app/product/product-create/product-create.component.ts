@@ -3,6 +3,8 @@ import {ProductService} from '../../service/product.service';
 import {Product} from '../../model/product';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
+import {CategoryService} from '../../service/category.service';
+import {Category} from '../../model/category';
 
 @Component({
   selector: 'app-product-create',
@@ -12,23 +14,34 @@ import {Router} from '@angular/router';
 export class ProductCreateComponent implements OnInit {
   productForm: FormGroup;
 
+  categoryList: Category[];
+
   constructor(private productService: ProductService,
+              private categoryService: CategoryService,
               private router: Router) {
   }
 
   ngOnInit(): void {
+    this.getAllCategory();
     this.productForm = new FormGroup({
       id: new FormControl(),
       name: new FormControl(),
       price: new FormControl(),
-      description: new FormControl()
+      description: new FormControl(),
+      category: new FormControl()
+    });
+  }
+
+  getAllCategory() {
+    this.categoryService.getAll().subscribe(category => {
+      this.categoryList = category;
     });
   }
 
   submit() {
-    const product = this.productForm.value;
-    this.productService.saveProduct(product);
-    // chuyen ve trang list
-    this.router.navigateByUrl('/product');
+    this.productService.saveProduct(this.productForm.value).subscribe(() => {
+      alert('added success');
+      this.router.navigateByUrl('/product');
+    });
   }
 }
