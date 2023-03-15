@@ -1,3 +1,5 @@
+import {CustomerType} from './customer-type';
+
 export interface Customer {
   id?: number;
   code?: string;
@@ -8,5 +10,5 @@ export interface Customer {
   phoneNumber?: string;
   email?: string;
   address?: string;
-  customerType?: number;
+  customerType?: CustomerType;
 }

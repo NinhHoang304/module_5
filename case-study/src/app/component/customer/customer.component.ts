@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Customer} from '../../model/customer';
 import {CustomerService} from '../../service/customer.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-customer',
@@ -9,9 +10,28 @@ import {CustomerService} from '../../service/customer.service';
 })
 export class CustomerComponent implements OnInit {
   customerList: Customer[] = [];
-  constructor(private customerService: CustomerService) { }
+  idDelete: number;
+  nameDelete: string;
+
+  constructor(private customerService: CustomerService,
+              private router: Router) {
+  }
 
   ngOnInit(): void {
-    this.customerList = this.customerService.getAll();
+    this.customerService.getAllCustomer().subscribe(customerList => {
+      this.customerList = customerList;
+    });
+  }
+
+  getInfoDelete(id: number, name: string) {
+    this.idDelete = id;
+    this.nameDelete = name;
+  }
+
+  deleteCustomer() {
+    this.customerService.delete(this.idDelete).subscribe(() => {
+      alert('delete success');
+      this.router.navigateByUrl('/customer');
+    });
   }
 }

@@ -1,53 +1,33 @@
 import {Injectable} from '@angular/core';
 import {Contract} from '../model/contract';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {Customer} from '../model/customer';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContractService {
-  contractList: Contract[] = [
-    {
-      id: 1,
-      customer: {
-        name: 'Nguyễn Thị Hào '
-      },
-      facility: {
-        name: 'Villa beach front'
-      },
-      startDate: '2023/09/08',
-      endDate: '2023/09/12',
-      deposit: 200000
-    },
-    {
-      id: 1,
-      customer: {
-        name: 'Phạm Xuân Diệu'
-      },
-      facility: {
-        name: 'House princess 02'
-      },
-      startDate: '2023/09/08',
-      endDate: '2023/09/12',
-      deposit: 300000
-    },
-    {
-      id: 1,
-      customer: {
-        name: 'Trương Đình Nghệ'
-      },
-      facility: {
-        name: 'Room twin 02'
-      },
-      startDate: '2023/09/08',
-      endDate: '2023/09/12',
-      deposit: 100000
-    }
-  ];
-
-  constructor() {
+  constructor(private httpClient: HttpClient) {
   }
 
-  getAll(): Contract[] {
-    return this.contractList;
+  getAllContract(): Observable<Contract[]> {
+    return this.httpClient.get<Contract[]>('http://localhost:3000/contracts');
+  }
+
+  findById(id: number): Observable<Contract> {
+    return this.httpClient.get<Contract>('http://localhost:3000/contracts/' + id);
+  }
+
+  save(contract: Contract): Observable<Contract> {
+    return this.httpClient.post<Contract>('http://localhost:3000/contracts', contract);
+  }
+
+  update(id: number, contract: Contract): Observable<Contract> {
+    return this.httpClient.put<Contract>('http://localhost:3000/contracts/' + id, contract);
+  }
+
+  delete(id: number): Observable<Contract> {
+    return this.httpClient.delete<Contract>('http://localhost:3000/contracts/' + id);
   }
 }

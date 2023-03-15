@@ -8,12 +8,14 @@ import {FacilityService} from '../../service/facility.service';
   styleUrls: ['./facility.component.css']
 })
 export class FacilityComponent implements OnInit {
-  facilityList: Facility[] = [];
+  facilityList?: Facility[] = [];
 
   constructor(private facilityService: FacilityService) { }
 
   ngOnInit(): void {
-    this.facilityList = this.facilityService.getAll();
+    this.facilityService.getAllFacility().subscribe(facilityList => {
+      this.facilityList = facilityList;
+    });
   }
 
 }

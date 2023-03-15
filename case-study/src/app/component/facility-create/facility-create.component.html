@@ -112,15 +112,20 @@
           <div class="input-group mb-3">
             <span class="input-group-text">Rent Type</span>
             <select formControlName="rentType" class="form-select" aria-label="Default select example">
-              <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              <option *ngFor="let rentType of rentTypeList" [ngValue]="rentType">{{rentType.rentTypeName}}</option>
             </select>
           </div>
           <p class="text-danger" *ngIf="facilityCreateForm.controls.rentType?.errors?.required && facilityCreateForm.controls.rentType?.touched">
             Không được để trống
           </p>
+        </div>
+        <div class="mb-1">
+          <div class="input-group mb-3">
+            <span class="input-group-text">Facility Type</span>
+            <select formControlName="facilityType" class="form-select" aria-label="Default select example">
+              <option *ngFor="let facilityType of facilityTypeList" [ngValue]="facilityType">{{facilityType.name}}</option>
+            </select>
+          </div>
         </div>
 
         <button [disabled]="facilityCreateForm.invalid" style="float: right" type="submit" class="btn btn-outline-success">Save changes</button>

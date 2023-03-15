@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {CustomerService} from '../../service/customer.service';
 import {Customer} from '../../model/customer';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {CustomerTypeService} from '../../service/customer-type.service';
+import {Router} from '@angular/router';
+import {CustomerType} from '../../model/customer-type';
 
 @Component({
   selector: 'app-customer-create',
@@ -10,11 +13,15 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class CustomerCreateComponent implements OnInit {
 
-  constructor(private customerService: CustomerService) {
+  constructor(private customerService: CustomerService,
+              private customerTypeService: CustomerTypeService,
+              private router: Router) {
   }
   createCustomerForm: FormGroup;
+  customerTypeList: CustomerType[];
 
   ngOnInit(): void {
+    this.getAllCustomerType();
     this.createCustomerForm = new FormGroup({
       code: new FormControl('', [Validators.required, Validators.pattern(/^KH-\d{4}$/)]),
       name: new FormControl('', [Validators.required]),
@@ -27,8 +34,15 @@ export class CustomerCreateComponent implements OnInit {
       customerType: new FormControl('', [Validators.required])
     });
   }
-
+  getAllCustomerType() {
+    this.customerTypeService.getAllCustomerType().subscribe(customerType => {
+      this.customerTypeList = customerType;
+    });
+  }
   addCustomer() {
-    return null;
+    this.customerService.save(this.createCustomerForm.value).subscribe(() => {
+      alert('Add Success');
+      this.router.navigateByUrl('/customer');
+    });
   }
 }

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ContractService} from '../../service/contract.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-contract-create',
@@ -9,7 +10,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class ContractCreateComponent implements OnInit {
 
-  constructor(private contractService: ContractService) {
+  constructor(private contractService: ContractService,
+              private router: Router) {
   }
 
   contractForm: FormGroup;
@@ -25,6 +27,9 @@ export class ContractCreateComponent implements OnInit {
   }
 
   addContract() {
-    return null;
+    this.contractService.save(this.contractForm.value).subscribe(() => {
+      alert('add success');
+      this.router.navigateByUrl('/contract');
+    });
   }
 }

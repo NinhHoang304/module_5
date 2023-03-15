@@ -1,7 +1,7 @@
 <div class="container">
   <!--title-->
   <div class="row" style="margin-top: 20px">
-    <h3 style="text-align: center">Create Customer</h3>
+    <h3 style="text-align: center">Edit Customer</h3>
   </div>
   <!--end title-->
   <div class="row" style="margin-top: 20px; margin-bottom: 20px">
@@ -92,12 +92,7 @@
         <div class="input-group mb-3">
           <span class="input-group-text">Customer Type</span>
           <select formControlName="customerType" class="form-select" aria-label="Default select example">
-            <option value="0" disabled>Chọn loại khách hàng</option>
-            <option value="1">Diamond</option>
-            <option value="2">Platinum</option>
-            <option value="3">Gold</option>
-            <option value="4">Silver</option>
-            <option value="5">Member</option>
+            <option *ngFor="let customerType of customerTypeList" [ngValue]="customerType">{{customerType.name}}</option>
           </select>
         </div>
         <p class="text-danger" *ngIf="editCustomerForm.controls.customerType?.errors?.required && editCustomerForm.controls.customerType?.touched">
