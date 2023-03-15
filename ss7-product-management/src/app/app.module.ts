@@ -11,6 +11,7 @@ import { ProductDeleteComponent } from './product/product-delete/product-delete.
 import {HttpClientModule} from '@angular/common/http';
 import { CategoryListComponent } from './category/category-list/category-list.component';
 import { CategoryCreateComponent } from './category/category-create/category-create.component';
+import {NavbarComponent} from './shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CategoryCreateComponent } from './category/category-create/category-cre
     ProductEditComponent,
     ProductDeleteComponent,
     CategoryListComponent,
-    CategoryCreateComponent
+    CategoryCreateComponent,
+    NavbarComponent
   ],
     imports: [
         BrowserModule,
