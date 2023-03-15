@@ -22,12 +22,12 @@
     },
     {
       "id": 3,
-      "name": "Iphone13",
+      "name": "Iphone1322",
       "price": "1200",
       "description": "New2",
       "category": {
-        "id": 1,
-        "name": "IPhone"
+        "id": 2,
+        "name": "Samsung"
       }
     }
   ],
