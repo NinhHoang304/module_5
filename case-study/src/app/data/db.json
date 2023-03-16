@@ -16,43 +16,19 @@
       "id": 1
     },
     {
-      "id": 2,
       "code": "KH-0003",
-      "customerType": 3,
-      "name": "Nguyễn Thị Hà",
-      "dateOfBirth": "1998-12-2",
-      "gender": false,
-      "idCard": "2017564293",
-      "phoneNumber": "0789555872",
-      "email": "nguyent289@gmail.com",
-      "address": "K14/15 Nguyễn Thị Thập, Thanh Khê, Đà Nẵng"
-    },
-    {
-      "id": 3,
-      "code": "KH-0004",
-      "name": "Hà Văn Tính",
-      "dateOfBirth": "1999-12-28",
-      "gender": true,
-      "idCard": "201946547",
-      "phoneNumber": "0907456123",
-      "email": "avg@gmail.com",
-      "address": "Đà Nẵng",
-      "customerType": 1
-    },
-    {
-      "id": 4,
-      "code": "KH-0005",
-      "name": "Hoang",
-      "dayOfBirth": "2023-03-10",
-      "gender": "true",
-      "idCard": 1234567890,
+      "name": "hoang",
+      "dayOfBirth": "2023-03-09",
+      "gender": "false",
+      "idCard": 123456789,
       "phoneNumber": "0901234567",
       "email": "hoang@gmail.com",
-      "address": "123 asd",
+      "address": "ádads",
       "customerType": {
-        "id": 1,
-        "name": "Diamond"
-      }
+        "id": 2,
+        "name": "Vip"
+      },
+      "id": 2
     }
   ],
   "customerTypes": [

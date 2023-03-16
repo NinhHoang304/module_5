@@ -6,6 +6,10 @@
   <div class="mb-3">
     <a routerLink="/customer/create" class="btn btn-success">Create Facility</a>
   </div>
+  <div class="d-flex" style="margin: 0">
+    <input #search class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button (click)="searchByName(search.value)" class="btn btn-outline-success" type="submit">Search</button>
+  </div>
   <div class="row">
     <div class="table-list">
       <div class="table-responsive">
@@ -25,7 +29,7 @@
           </thead>
           <tbody>
 
-          <tr *ngFor="let customer of customerList">
+          <tr *ngFor="let customer of customerList | paginate: { itemsPerPage: 1, currentPage: page}">
             <td>{{customer.code}}</td>
             <td>{{customer.name}}</td>
             <td>{{customer.dayOfBirth}}</td>
@@ -51,6 +55,8 @@
         </table>
       </div>
     </div>
+
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
   </div>
 </div>
 

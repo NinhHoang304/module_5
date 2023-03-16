@@ -14,6 +14,10 @@ export class CustomerService {
     return this.httpClient.get<Customer[]>('http://localhost:3000/customers');
   }
 
+  searchCustomer(name: string): Observable<Customer[]> {
+    return this.httpClient.get<Customer[]>('http://localhost:3000/customers?name_like=' + name);
+  }
+
   findById(id: number): Observable<Customer> {
     return this.httpClient.get<Customer>('http://localhost:3000/customers/' + id);
   }

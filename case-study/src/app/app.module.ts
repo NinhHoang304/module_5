@@ -17,6 +17,7 @@ import { ContractCreateComponent } from './component/contract-create/contract-cr
 import { BodyContentComponent } from './component/body-content/body-content.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {HttpClientModule} from '@angular/common/http';
         BrowserModule,
         AppRoutingModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
+        NgxPaginationModule
     ],
   providers: [],
   bootstrap: [AppComponent]

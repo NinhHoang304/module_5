@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +6,5 @@ import Swal from 'sweetalert2';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ss7-product-management';
-
-  constructor() {
-  }
+  title = 'final-exam';
 }
