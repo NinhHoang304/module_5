@@ -1,0 +1,8 @@
+a:hover {
+  color: blue !important;
+}
+
+li {
+  font-weight: bold;
+  font-size: larger;
+}

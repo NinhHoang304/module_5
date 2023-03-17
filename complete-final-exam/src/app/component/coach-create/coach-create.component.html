@@ -1,0 +1,70 @@
+<!--Content Edit-->
+<div class="container-fluid" style="margin-top: 50px; height: 500px;">
+  <div id="content" style="padding-top: 5px">
+    <h4 style="text-align: center">Chỉnh sửa thông tin xe khách có số xe</h4>
+    <div class="col-12" style="max-width: 60%; margin: 0 auto">
+      <form *ngIf="coachReactForm" [formGroup]="coachReactForm" (ngSubmit)="createCoach()">
+        <div class="input-group mb-3">
+          <span class="input-group-text">Số xe</span>
+          <input type="text" formControlName="numberPlate" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+        <p class="text-danger" *ngIf="coachReactForm.controls?.numberPlate?.touched && coachReactForm.controls.numberPlate?.errors?.required">
+          Bạn không được bỏ trống</p>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Điểm đi</span>
+          <select class="form-select" formControlName="coachType" aria-label="Default select example">
+            <option *ngFor="let item of coachTypeList" [ngValue]="item">{{item.name}}</option>
+          </select>
+        </div>
+        <p class="text-danger" *ngIf="coachReactForm.controls?.coachType?.touched && coachReactForm.controls.coachType?.errors?.required">
+          Bạn không được bỏ trống</p>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Điểm đi</span>
+          <select class="form-select" formControlName="departure" aria-label="Default select example">
+            <option *ngFor="let item of departureList" [ngValue]="item">{{item.name}}</option>
+          </select>
+        </div>
+        <p class="text-danger" *ngIf="coachReactForm.controls?.departure?.touched && coachReactForm.controls.departure?.errors?.required">
+          Bạn không được bỏ trống</p>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Điểm đến</span>
+          <select class="form-select" formControlName="destination" aria-label="Default select example">
+            <option *ngFor="let item of destinationList" [ngValue]="item">{{item.name}}</option>
+          </select>
+        </div>
+        <p class="text-danger" *ngIf="coachReactForm.controls?.destination?.touched && coachReactForm.controls.destination?.errors?.required">
+          Bạn không được bỏ trống</p>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Số điện thoại</span>
+          <input type="text" class="form-control" formControlName="phoneNumber" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+        <p class="text-danger" *ngIf="coachReactForm.controls?.phoneNumber?.touched && coachReactForm.controls.phoneNumber?.errors?.required">
+          Bạn không được bỏ trống</p>
+        <p class="text-danger" *ngIf="coachReactForm.controls?.phoneNumber?.touched && coachReactForm.controls.phoneNumber?.errors?.pattern">
+          Sai định dạng</p>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Giờ đi</span>
+          <input type="time" class="form-control" formControlName="departureTime" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+        <p class="text-danger" *ngIf="coachReactForm.controls?.departureTime?.touched && coachReactForm.controls.departureTime?.errors?.required">
+          Bạn không được bỏ trống</p>
+        <div class="input-group mb-3">
+          <span class="input-group-text">Giờ đến</span>
+          <input type="time" class="form-control" formControlName="arrivalTime" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+        <p class="text-danger" *ngIf="coachReactForm.controls?.arrivalTime?.touched && coachReactForm.controls.arrivalTime?.errors?.required">
+          Bạn không được bỏ trống</p>
+        <button type="button" class="btn btn-outline-secondary" routerLink="/benxe">Quay lại</button>
+        <button [disabled]="coachReactForm.invalid" style="float: right" type="submit" class="btn btn-outline-success">Sửa</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+<!--End Content Edit-->

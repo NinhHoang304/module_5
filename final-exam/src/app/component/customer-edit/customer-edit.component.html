@@ -1,0 +1,77 @@
+<!--Content-->
+<div class="container-fluid" style="margin-top: 50px; height: 700px;">
+  <div id="content" style="padding-top: 5px">
+    <h4 style="text-align: center">Customer Edit</h4>
+    <div class="col-12" style="max-width: 60%; margin: 0 auto">
+      <form *ngIf="customerForm" [formGroup]="customerForm" (ngSubmit)="updateCustomer()">
+        <div class="input-group mb-3">
+          <span class="input-group-text">Id</span>
+          <input type="text" formControlName="id" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Name</span>
+          <input type="text" formControlName="name" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Day Of Birth</span>
+          <input type="date" formControlName="dateOfBirth" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="form-check">
+            <input class="form-check-input" formControlName="gender" type="radio" value="true" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Male
+            </label>
+          </div>
+          <div class="form-check" style="margin-left: 10px">
+            <input class="form-check-input" formControlName="gender" type="radio" value="false" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault2">
+              Female
+            </label>
+          </div>
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Id Card</span>
+          <input type="number" formControlName="idCard" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Phone Number</span>
+          <input type="text" formControlName="phoneNumber" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Email</span>
+          <input type="email" formControlName="email" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Address</span>
+          <input type="text" formControlName="address" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">Customer Type</span>
+          <select formControlName="customerType" class="form-select" aria-label="Default select example">
+            <option *ngFor="let customerType of customerTypeList" [ngValue]="customerType">{{customerType.name}}</option>
+          </select>
+        </div>
+
+        <button style="float: right" type="submit" class="btn btn-outline-success">Save changes</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+<!--End Content-->
